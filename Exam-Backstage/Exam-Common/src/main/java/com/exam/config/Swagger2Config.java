@@ -14,6 +14,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 /**
  * Swagger2API文档的配置
  **/
+@Deprecated
 @Configuration
 @ComponentScan(value = "com.exam.controller")
 @ConditionalOnProperty(name = "swagger.enable", havingValue = "true")

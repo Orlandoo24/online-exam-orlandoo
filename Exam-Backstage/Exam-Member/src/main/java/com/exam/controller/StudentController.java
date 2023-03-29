@@ -23,7 +23,7 @@ public class StudentController {
     public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size) {
         Page<Student> studentPage = new Page<>(page, size);
         IPage<Student> res = studentService.findAll(studentPage);
-        return ApiResultHandler.buildApiResult(200, "分页查询所有学生", res);
+        return ApiResultHandler.success(res);
     }
 
     @GetMapping("/student/{studentId}")

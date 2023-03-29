@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Exam-Backstage/Exam-Common/Exam-Common.iml" filepath="$PROJECT_DIR$/Exam-Backstage/Exam-Common/Exam-Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exam-Backstage/Exam-Gateway/Exam-Gateway.iml" filepath="$PROJECT_DIR$/Exam-Backstage/Exam-Gateway/Exam-Gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exam-Backstage/Exam-Member/Exam-Member.iml" filepath="$PROJECT_DIR$/Exam-Backstage/Exam-Member/Exam-Member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exam-Backstage/Exam-Message/Exam-Message.iml" filepath="$PROJECT_DIR$/Exam-Backstage/Exam-Message/Exam-Message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exam-Backstage/Exam-Question/Exam-Question.iml" filepath="$PROJECT_DIR$/Exam-Backstage/Exam-Question/Exam-Question.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exam-Backstage/exam.iml" filepath="$PROJECT_DIR$/Exam-Backstage/exam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/online-exam.iml" filepath="$PROJECT_DIR$/.idea/online-exam.iml" />
+    </modules>
+  </component>
+</project>

@@ -12,7 +12,9 @@ import java.util.List;
  */
 @Data
 public class Message {
+
     private Integer id;
+
     private Integer temp_id;//解决id为null创建的一个临时id
 
     private String title;

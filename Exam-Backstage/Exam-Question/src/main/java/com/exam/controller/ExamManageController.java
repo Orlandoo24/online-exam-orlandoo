@@ -6,6 +6,7 @@ import com.exam.entity.ApiResult;
 import com.exam.entity.ExamManage;
 import com.exam.service.impl.ExamManageServiceImpl;
 import com.exam.util.ApiResultHandler;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * @author PlutoWu
  * @date 2021/05/24
  */
+@Log4j2
 @RestController
 public class ExamManageController {
 
@@ -55,10 +57,14 @@ public class ExamManageController {
 
     @PutMapping("/exam")
     public ApiResult update(@RequestBody ExamManage exammanage) {
-        int res = examManageService.update(exammanage);
-//        if (res == 0) {
-//            return ApiResultHandler.buildApiResult(20000,"请求参数错误");
-//        }
+        int res;
+        try {
+            res = examManageService.update(exammanage);
+            log.info("受影响行数：{}", res);
+        } catch (Exception e) {
+            log.info("编辑更新异常：{}", e);
+            return ApiResultHandler.buildApiResult(20000,"请求参数错误", e);
+        }
         System.out.print("更新操作执行---");
         return ApiResultHandler.buildApiResult(200, "更新成功", res);
     }

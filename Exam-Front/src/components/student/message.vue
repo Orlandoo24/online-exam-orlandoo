@@ -24,8 +24,8 @@
       </div>
       <div class="all">
         <ul class="msglist">
-          <li class="list" 
-          @mouseenter="enter(index)" 
+          <li class="list"
+          @mouseenter="enter(index)"
           @mouseleave="leave(index)"
           v-for="(data,index) in msg" :key="index"
           >
@@ -75,7 +75,7 @@ export default {
     this.getMsg()
   },
   // watch: {
-    
+
   // },
   methods: {
     getMsg() {
@@ -97,16 +97,6 @@ export default {
       this.pagination.current = val
       this.getMsg()
     },
-    // formatTime(date) { //日期格式化
-    //   let year = date.getFullYear()
-    //   let month= date.getMonth()+ 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-    //   let day=date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-    //   let hours=date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-    //   let minutes=date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-    //   let seconds=date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-    //   // 拼接
-    //   return year+"-"+month+"-"+day+" "+hours+":"+minutes+":"+seconds;
-    // },
     submit() {
       let date = new Date()
       if(this.title.length == 0 || this.content.length == 0) { //非空判断
@@ -166,7 +156,7 @@ export default {
         this.$message({
           type: 'info',
           message: '取消输入'
-        });       
+        });
       });
     },
     enter(index) {
@@ -240,7 +230,7 @@ export default {
         transition: all .3s ease;
       }
       .comment {
-        margin:-7px 0px; 
+        margin:-7px 0px;
         padding-bottom: 12px;
         font-size: 13px;
         color: #28b2b4;

@@ -9,10 +9,7 @@ import com.exam.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author PlutoWu
- * @date 2021/05/24
- */
+
 @RestController
 public class TeacherController {
 

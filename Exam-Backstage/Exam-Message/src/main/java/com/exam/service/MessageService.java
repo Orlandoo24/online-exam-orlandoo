@@ -9,6 +9,7 @@ import com.exam.entity.Message;
  * @date 2021/05/24
  */
 public interface MessageService {
+
     IPage<Message> findAll(Page page);
 
     Message findById(Integer id);

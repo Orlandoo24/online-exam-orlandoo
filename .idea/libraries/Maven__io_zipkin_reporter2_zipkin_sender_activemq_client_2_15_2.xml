@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.zipkin.reporter2:zipkin-sender-activemq-client:2.15.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/repository/io/zipkin/reporter2/zipkin-sender-activemq-client/2.15.2/zipkin-sender-activemq-client-2.15.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Documents/repository/io/zipkin/reporter2/zipkin-sender-activemq-client/2.15.2/zipkin-sender-activemq-client-2.15.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Documents/repository/io/zipkin/reporter2/zipkin-sender-activemq-client/2.15.2/zipkin-sender-activemq-client-2.15.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

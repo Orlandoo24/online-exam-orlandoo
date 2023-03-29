@@ -1,5 +1,6 @@
 package com.exam.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.Message;
@@ -10,10 +11,11 @@ import org.apache.ibatis.annotations.*;
  * @date 2021/05/24
  */
 @Mapper
-public interface MessageMapper {
+public interface MessageMapper extends BaseMapper<Message> {
     @Select("select id,id as temp_id,title,content,time from message order by id desc")
     @Results({
-            @Result(property = "replays", column = "temp_id", many = @Many(select = "com.exam.mapper.ReplayMapper.findAllById"))
+            @Result(property = "replays", column = "temp_id",
+                    many = @Many(select = "com.exam.mapper.ReplayMapper.findAllById"))
     })
     IPage<Message> findAll(Page page);
 

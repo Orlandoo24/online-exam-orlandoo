@@ -1,10 +1,9 @@
 package com.exam.entity;
 
 
-/**
- * @author PlutoWu
- * @date 2021/05/24
- */
+import lombok.Data;
+
+@Data
 public class ApiResult<T> {
     /**
      * 错误码，表示一种错误类型

@@ -5,6 +5,7 @@ package com.exam.entity;
  * @date 2021/05/24
  */
 public class Admin {
+
     private Integer adminId;
 
     private String adminName;

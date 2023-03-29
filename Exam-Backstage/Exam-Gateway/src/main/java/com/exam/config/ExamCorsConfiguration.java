@@ -6,12 +6,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
-/**
- * 跨域配置
- *
- * @author PlutoWu
- * @date 2021/05/05
- */
+
 @Configuration
 public class ExamCorsConfiguration {
 

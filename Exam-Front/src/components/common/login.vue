@@ -48,6 +48,8 @@
 <script>
 import store from '@/vuex/store'
 import {mapState} from 'vuex'
+
+//默认填充
 export default {
   store,
   name: "login",
@@ -56,7 +58,7 @@ export default {
       role: 2,
       labelPosition: 'left',
       formLabelAlign: {
-        username: '20154084',
+        username: '20155009',
         password: '123456'
       }
     }
@@ -109,7 +111,6 @@ export default {
   },
   computed: mapState(["userInfo"]),
   mounted() {
-
   }
 }
 </script>
