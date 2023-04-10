@@ -47,7 +47,7 @@ public class ItemController {
         Integer paperId = item.getPaperId();
 
         // 选择题数据库获取
-        List<Integer> changeNumbers = multiQuestionService.findBySubject("计算机网络", changeNumber);
+        List<Integer> changeNumbers = multiQuestionService.findBySubject(item.getSubject(), changeNumber);
         if (changeNumbers == null) {
             return ApiResultHandler.buildApiResult(400, "选择题数据库获取失败", null);
         }

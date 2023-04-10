@@ -41,5 +41,6 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public int add(Message message) {
         return messageMapper.add(message);
+//        return  messageMapper.insert(message);
     }
 }

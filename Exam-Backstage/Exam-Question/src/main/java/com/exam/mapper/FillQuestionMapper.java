@@ -35,5 +35,5 @@ public interface FillQuestionMapper {
     int add(FillQuestion fillQuestion);
 
     @Select("select questionId from fill_question where subject = #{subject} order by rand() desc limit #{pageNo}")
-    List<Integer> findBySubject(String subject, Integer pageNo);
+    List<Integer> findBySubject(@Param("subject")String subject, @Param("pageNo")Integer pageNo);
 }

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.JudgeQuestion;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -36,5 +37,5 @@ public interface JudgeQuestionMapper {
     int add(JudgeQuestion judgeQuestion);
 
     @Select("select questionId from judge_question  where subject=#{subject}  order by rand() desc limit #{pageNo}")
-    List<Integer> findBySubject(String subject, Integer pageNo);
+    List<Integer> findBySubject(@Param("subject")String subject, @Param("pageNo")Integer pageNo);
 }

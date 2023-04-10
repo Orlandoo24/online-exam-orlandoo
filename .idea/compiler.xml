@@ -7,8 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Exam-Common" />
         <module name="Exam-Gateway" />
+        <module name="Exam-Common" />
         <module name="Exam-Question" />
         <module name="Exam-Message" />
         <module name="Exam-Member" />
@@ -22,5 +22,10 @@
       <module name="Exam-Message" target="1.8" />
       <module name="Exam-Question" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="exam" options="" />
+    </option>
   </component>
 </project>

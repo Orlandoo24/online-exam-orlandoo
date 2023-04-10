@@ -3,10 +3,7 @@ package com.exam.mapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.MultiQuestion;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -44,7 +41,7 @@ public interface MultiQuestionMapper {
     int add(MultiQuestion multiQuestion);
 
     @Select("select questionId from multi_question  where subject =#{subject} order by rand() desc limit #{pageNo}")
-    List<Integer> findBySubject(String subject, Integer pageNo);
+    List<Integer> findBySubject(@Param("subject") String subject, @Param("pageNo") Integer pageNo);
 
 
 }

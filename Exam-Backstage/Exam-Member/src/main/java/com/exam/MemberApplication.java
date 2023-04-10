@@ -1,5 +1,7 @@
 package com.exam;
 
+import org.apache.ibatis.logging.LogFactory;
+import org.apache.ibatis.logging.stdout.StdOutImpl;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class MemberApplication {
 
     public static void main(String[] args) {
+        LogFactory.useCustomLogging(StdOutImpl.class);
         SpringApplication.run(MemberApplication.class, args);
     }
 

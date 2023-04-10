@@ -11,7 +11,8 @@ import org.apache.ibatis.annotations.*;
  * @date 2021/05/24
  */
 @Mapper
-public interface MessageMapper extends BaseMapper<Message> {
+//public interface MessageMapper extends BaseMapper<Message> {
+public interface MessageMapper  {
     @Select("select id,id as temp_id,title,content,time from message order by id desc")
     @Results({
             @Result(property = "replays", column = "temp_id",
