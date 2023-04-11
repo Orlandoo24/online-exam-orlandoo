@@ -48,3 +48,5 @@ OnlineExam是由Spring Cloud Alibaba 与 Vue 构建的极简但功能完备的�
 - [x] 配置 Zipkin 链路追踪
 - [ ] 使用 Sharding JDBC 进行主从复制及读写分离
 - [ ] 构建 ELK 日志收集系统
+- [ ] 用dubbo封装所有接口
+- [ ] 将部分考试信息用es存储
