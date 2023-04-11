@@ -45,3 +45,5 @@ Front tech-stack
 - [x] Configure Zipkin link tracking
 - [ ] Master slave copy and read write separation using Sharding JDBC
 - [ ] Build ELK log collection system
+- [ ] Wrap all API in dubbo
+- [ ] Store some of the exam information in es
