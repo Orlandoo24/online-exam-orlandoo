@@ -31,8 +31,8 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Pluto的SwaggerAPI文档")
-                .description("PlutoWu Swagger")
+                .title("JIARU的SwaggerAPI文档")
+                .description("JIARU Swagger")
                 .termsOfServiceUrl("")
                 .version("1.0")
                 .build();
