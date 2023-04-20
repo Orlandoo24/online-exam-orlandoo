@@ -48,7 +48,7 @@
                 <p>选择题部分</p>
                 <ul>
                   <li v-for="(list, index1) in topic[1]" :key="index1">
-                    <a href="javascript:;" 
+                    <a href="javascript:;"
                       @click="change(index1)"
                       :class="{'border': index == index1 && currentType == 1,'bg': bg_flag && topic[1][index1].isClick == true}">
                       <span :class="{'mark': topic[1][index1].isMark == true}"></span>
@@ -76,7 +76,7 @@
               <div class="final" @click="commit()">结束考试</div>
             </div>
           </div>
-        </transition>  
+        </transition>
         <!--右边选择答题区-->
         <transition name="slider-fade">
         <div class="right">
@@ -92,17 +92,17 @@
  .content .number {
   @apply inline-flex justify-center w-5 h-5 rounded-lg mr-1 bg-blue-300
 
-} 
+}
 
 .content .topic {
   @apply py-5 pt-8
- 
+
 }
 .operation .end li {
   @apply cursor-pointer mx-24
 
 }
-.operation { 
+.operation {
   @apply bg-white rounded-md py-3 mr-3
 
 }
@@ -163,7 +163,7 @@
           </div>
         </div>
         </transition>
-     </div> 
+     </div>
   </div>
 </template>
 
@@ -233,7 +233,7 @@ export default {
       this.userInfo.id = this.$cookies.get("cid")
     },
     calcuScore() { //计算答题分数
-      
+
     },
     getExamData() { //获取当前试卷所有信息
       let date = new Date()
@@ -243,8 +243,8 @@ export default {
       this.$axios(`/api/exam/${examCode}`).then(res => {  //通过examCode请求试卷详细信息
         this.examData = { ...res.data.data} //获取考试详情
         this.index = 0
-        this.time = this.examData.totalScore-1 //获取分钟数
-         
+        this.time = this.examData.totalTime-1 //获取分钟数
+
         let paperId = this.examData.paperId
         this.$axios(`/api/paper/${paperId}`).then(res => {  //通过paperId获取试题题目信息
           this.topic = {...res.data}
@@ -321,7 +321,7 @@ export default {
           let part= this.showQuestion.split("()").length -1 //根据题目中括号的数量确定填空横线数量
           this.part = part
           this.number = this.topicCount[0] + index + 1
-        } 
+        }
       }else if(index >= len) {
         this.index = 0
         this.judge(this.index)
@@ -357,7 +357,7 @@ export default {
         data[this.index]["isClick"] = true
       }
       /* 保存学生答题选项 */
-      this.topic1Answer[this.index] = val 
+      this.topic1Answer[this.index] = val
     },
     getJudgeLabel(val) {  //获取判断题作答选项
       this.judgeAnswer[this.index] = val
@@ -370,10 +370,10 @@ export default {
     previous() { //上一题
       this.index --
       switch(this.currentType) {
-        case 1: 
+        case 1:
           this.change(this.index)
           break
-        case 2: 
+        case 2:
           this.fill(this.index)
           break
         case 3:
@@ -384,10 +384,10 @@ export default {
     next() { //下一题
       this.index ++
       switch(this.currentType) {
-        case 1: 
+        case 1:
           this.change(this.index)
           break
-        case 2: 
+        case 2:
           this.fill(this.index)
           break
         case 3:
@@ -487,11 +487,11 @@ export default {
             if(res.data.code == 200) {
               console.log('fgbh',res.data.data)
               this.$router.push({path:'/studentScore',query: {
-                score: finalScore, 
+                score: finalScore,
                 startTime: this.startTime,
                 endTime: this.endTime
               }})
-            }  
+            }
           })
         }).catch(() => {
           console.log("继续答题")
@@ -499,9 +499,9 @@ export default {
       }
     },
     //倒计时
-    showTime() {       
+    showTime() {
       setInterval(() => {
-        
+
         this.time -= 1
         this.second=60
         if(this.time == 10) {
@@ -521,9 +521,9 @@ export default {
     if(this.second<0){
       this.second=60-Math.abs(this.second)
     }
-   
+
       },1000)
-    
+
     }
   },
   computed:mapState(["isPractice"])
@@ -639,7 +639,7 @@ export default {
 }
 .content .topic {
   padding: 20px 0px;
-  padding-top: 30px; 
+  padding-top: 30px;
 }
 .right .content {
   background-color: #fff;
@@ -700,18 +700,18 @@ export default {
 }
 .l-bottom .item li {
   @apply w-1/6 ml-1 mb-3
- 
+
 }
 .l-bottom .item {
   @apply flex flex-col
- 
+
 }
 .l-bottom .item ul {
   @apply w-full -mb-2 flex justify-around flex-wrap
 }
-.l-bottom .item ul li a { 
-  @apply relative justify-center inline-flex items-center w-8 h-8 rounded-full 
-  bg-white border border-solid border-gray-400 
+.l-bottom .item ul li a {
+  @apply relative justify-center inline-flex items-center w-8 h-8 rounded-full
+  bg-white border border-solid border-gray-400
   text-center text-black text-base
 
 }

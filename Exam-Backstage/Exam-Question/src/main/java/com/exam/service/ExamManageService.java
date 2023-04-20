@@ -12,12 +12,26 @@ import java.util.List;
  */
 public interface ExamManageService {
 
+
+    /**
+     * 分页查询所有考试和练习信息
+     */
+    IPage<ExamManage> findAll(Page<ExamManage> page);
+
     /**
      * 不分页查询所有考试信息
      */
-    List<ExamManage> findAll();
+    List<ExamManage> findAllExam();
 
-    IPage<ExamManage> findAll(Page<ExamManage> page);
+    /**
+     * 不分页查询所有练习信息
+     */
+    List<ExamManage> findAllPractices();
+
+    //分页查询所有练习信息
+    IPage<ExamManage> findAllPractices(Page<ExamManage> page);
+
+    IPage<ExamManage> findAllExam(Page<ExamManage> page);
 
     ExamManage findById(Integer examCode);
 
@@ -28,4 +42,6 @@ public interface ExamManageService {
     int add(ExamManage exammanage);
 
     ExamManage findOnlyPaperId();
+
+
 }

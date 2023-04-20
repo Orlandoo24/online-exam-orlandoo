@@ -335,7 +335,7 @@ export default {
       subject: '', //试卷名称用来接收路由参数
       postChange: { //选择题提交内容
         subject: '', //试卷名称
-        level: '', //难度等级选中值 
+        level: '', //难度等级选中值
         rightAnswer: '', //正确答案选中值
         section: '', //对应章节
         question: '', //题目
@@ -347,7 +347,7 @@ export default {
       },
       postFill: { //填空题提交内容
         subject: '', //试卷名称
-        level: '', //难度等级选中值 
+        level: '', //难度等级选中值
         answer: '', //正确答案
         section: '', //对应章节
         question: '', //题目
@@ -355,7 +355,7 @@ export default {
       },
       postJudge: { //判断题提交内容
         subject: '', //试卷名称
-        level: '', //难度等级选中值 
+        level: '', //难度等级选中值
         answer: '', //正确答案
         section: '', //对应章节
         question: '', //题目
@@ -416,10 +416,10 @@ export default {
     changeSubmit() { //选择题题库提交
       this.postChange.subject = this.subject
       this.$axios({ //提交数据到选择题题库表
-        url: '/api/MultiQuestion',
+        url: '/api/multiQuestion',
         method: 'post',
         data: {
-          ...this.postChange          
+          ...this.postChange
         }
       }).then(res => { //添加成功显示提示
         let status = res.data.code
@@ -431,7 +431,7 @@ export default {
           this.postChange = {}
         }
       }).then(() => {
-        this.$axios(`/api/multiQuestionId`).then(res => { //获取当前题目的questionId
+        this.$axios(`/api/multiQuestionId`).then(res => { //获取当前题目的multiQuestionId
           let questionId = res.data.data.questionId
           this.postPaper.questionId = questionId
           this.postPaper.questionType = 1
@@ -463,7 +463,7 @@ export default {
           this.postFill = {}
         }
       }).then(() => {
-        this.$axios(`/api/fillQuestionId`).then(res => { //获取当前题目的questionId
+        this.$axios(`/api/fillQuestionId`).then(res => { //获取当前题目的fillQuestionId
           let questionId = res.data.data.questionId
           this.postPaper.questionId = questionId
           this.postPaper.questionType = 2
@@ -495,7 +495,7 @@ export default {
           this.postJudge = {}
         }
       }).then(() => {
-        this.$axios(`/api/judgeQuestionId`).then(res => { //获取当前题目的questionId
+        this.$axios(`/api/judgeQuestionId`).then(res => { //获取当前题目的judgeQuestionId
           let questionId = res.data.data.questionId
           this.postPaper.questionId = questionId
           this.postPaper.questionType = 3
@@ -584,7 +584,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-      }        
+      }
     }
     .fill {
       .fillAnswer {

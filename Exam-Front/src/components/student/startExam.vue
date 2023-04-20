@@ -1,4 +1,4 @@
-// 我的考试页面
+// 我的练习页面
 <template>
   <div id="myExam">
     <div class="title"></div>
@@ -135,7 +135,7 @@ export default {
     //获取标签上的考试数
     getNumber() {
         var current_time = this.getTime();
-      this.$axios("/api/exams").then((res) => {
+      this.$axios("/api/practices").then((res) => {
         if (res.data.code == 200) {
           let allExam = res.data.data;
           this.num_all = res.data.data.length;
@@ -163,7 +163,7 @@ export default {
     //获取当前所有考试信息
     getExamInfo() {
       this.$axios(
-        `/api/exams/${this.pagination.current}/${this.pagination.size}`
+        `/api/practices/${this.pagination.current}/${this.pagination.size}`
       )
         .then((res) => {
           this.pagination = res.data.data;
@@ -176,7 +176,7 @@ export default {
     },
     //改变当前记录条数
     handleSizeChange(val) {
-      
+
       this.pagination.size = val;
       this.getExamInfo();
     },
@@ -208,10 +208,10 @@ export default {
     //点击未开始，筛选还没进行的考试
     showNotStarted() {
       var current_time = this.getTime();
-      this.$axios("/api/exams").then((res) => {
+      this.$axios("/api/practices").then((res) => {
         if (res.data.code == 200) {
           let allExam = res.data.data;
-     
+
           let newPage = allExam.filter((item) => {
             // return item.source.includes(this.key);
             let flag = this.CompareDate(
@@ -228,7 +228,7 @@ export default {
           this.pagination.total=newPage.length;
           this.pagination.size=6;
                console.log( 'this.pagination', newPage.length)
-         
+
         }
       });
     },
@@ -239,7 +239,7 @@ export default {
       // var current_time = "2021-04-01"; //当前时间
       //对所有试卷的日期与当前日期相比较
 
-      this.$axios("/api/exams").then((res) => {
+      this.$axios("/api/practices").then((res) => {
         if (res.data.code == 200) {
           let allExam = res.data.data;
           // this.num_s = 0;
@@ -265,7 +265,7 @@ export default {
     //展示已过期的试卷
     showOverdue() {
       var current_time = this.getTime();
-      this.$axios("/api/exams").then((res) => {
+      this.$axios("/api/practices").then((res) => {
         if (res.data.code == 200) {
           let allExam = res.data.data;
           // this.num_o = 0;
@@ -288,7 +288,7 @@ export default {
     },
     //搜索试卷
     search() {
-      this.$axios("/api/exams").then((res) => {
+      this.$axios("/api/practices").then((res) => {
         if (res.data.code == 200) {
           let allExam = res.data.data;
           let newPage = allExam.filter((item) => {

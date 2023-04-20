@@ -19,5 +19,4 @@ public class PaperManage {
 
     private Integer questionId;
 
-
 }

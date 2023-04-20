@@ -1,8 +1,6 @@
 // 我的试卷页面
 <template>
 
-
-
   <div id="myExam" >
     <div class="title m-2.5"></div>
     <div class="wrapper bg-white rounded-3xl mb-6 ">
@@ -57,7 +55,7 @@ export default {
     this.loading = true
   },
   // watch: {
-    
+
   // },
   methods: {
     //获取当前所有考试信息
@@ -173,8 +171,8 @@ export default {
   display: flex;
   align-items: center;
 }
-.top .search { 
-  
+.top .search {
+
 
   margin-left: auto;
   padding: 10px;

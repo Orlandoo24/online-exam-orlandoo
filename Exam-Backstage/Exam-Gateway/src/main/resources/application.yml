@@ -14,14 +14,14 @@ spring:
         - id: route_exam # 考试微服务路由规则
           uri: http://localhost:9002
           predicates: # 断言
-            - Path=/answers/**,/exams/**,/exam/**,/examManagePaperId,/papers,/paper/**,/paperManage,/scores/**,/score/**
+            - Path=/answers/**,/exams/**,/practices/**,/all/**,/exam/**,/examManagePaperId,/papers,/paper/**,/paperManage,/scores/**,/score/**
 
         - id: route_question # 题库微服务路由规则
           uri: http://localhost:9002
           predicates: # 断言
-            - Path=/fillQuestion,/fillQuestionId,/item,/judgeQuestion,/judgeQuestionId,/MultiQuestion,/MultiQuestionId
+            - Path=/fillQuestion,/fillQuestionId,/item,/judgeQuestion,/judgeQuestionId,/multiQuestion,/multiQuestionId
 
-        - id: route_question # 题库微服务路由规则
+        - id: route_question # 留言微服务路由规则
           uri: http://localhost:9001
           predicates: # 断言
             - Path=/messages/**,/message/**,/replay/**

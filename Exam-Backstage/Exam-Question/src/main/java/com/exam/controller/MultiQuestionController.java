@@ -26,7 +26,7 @@ public class MultiQuestionController {
         return ApiResultHandler.buildApiResult(200, "查询成功", res);
     }
 
-    @PostMapping("/MultiQuestion")
+    @PostMapping("/multiQuestion")
     public ApiResult add(@RequestBody MultiQuestion multiQuestion) {
         int res = multiQuestionService.add(multiQuestion);
         if (res != 0) {

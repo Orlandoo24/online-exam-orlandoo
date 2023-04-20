@@ -1,5 +1,6 @@
 package com.exam.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
@@ -10,7 +11,9 @@ import java.util.Date;
  * @date 2021/05/24
  */
 @Data
+//@TableName("exam_manege")
 public class ExamManage {
+
     private Integer examCode;
 
     private String description;

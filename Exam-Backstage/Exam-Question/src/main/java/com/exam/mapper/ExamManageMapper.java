@@ -1,5 +1,6 @@
 package com.exam.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.ExamManage;
@@ -12,12 +13,30 @@ import java.util.List;
  * @date 2021/05/24
  */
 @Mapper
-public interface ExamManageMapper {
-    @Select("select * from exam_manage")
-    List<ExamManage> findAll();
+public interface ExamManageMapper extends BaseMapper<ExamManage> {
 
-    @Select("select * from exam_manage")
+    /**
+     * 分页查询所有考试和练习
+     */
+    //分页查询所有考试
+    @Select("SELECT * FROM `exam_manage`")
     IPage<ExamManage> findAll(Page page);
+
+
+    //不分页查询所有考试
+    @Select("SELECT * FROM `exam_manage` WHERE `type` NOT LIKE '%练习%'")
+    List<ExamManage> findAllExam();
+    //分页查询所有考试
+    @Select("SELECT * FROM `exam_manage` WHERE `type` NOT LIKE '%练习%'")
+    IPage<ExamManage> findAllExam(Page page);
+
+    //不分页查询所有练习
+    @Select("SELECT * FROM `exam_manage` WHERE `type` LIKE '%练习%'")
+    List<ExamManage> findAllPractices();
+    //分页查询所有练习
+    @Select("SELECT * FROM `exam_manage` WHERE `type` LIKE '%练习%'")
+    IPage<ExamManage> findAllPractices(Page page);
+
 
     @Select("select * from exam_manage where examCode = #{examCode}")
     ExamManage findById(Integer examCode);
