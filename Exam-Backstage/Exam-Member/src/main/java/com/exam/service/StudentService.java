@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface StudentService {
 
-    IPage<Student> findAll(Page<Student> page);
+    IPage<Student> findAll(Integer page, Integer size);
 
     Student findById(Integer studentId);
 
@@ -23,4 +23,7 @@ public interface StudentService {
     int updatePwd(Student student);
 
     int add(Student student);
+
+    IPage<Student> findAllStudent(Integer page, Integer size);
+
 }

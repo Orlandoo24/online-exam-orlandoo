@@ -9,8 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-
-
     <artifactId>Exam-Common</artifactId>
 
     <properties>
@@ -35,7 +33,7 @@
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
 
-        <!-- MyBatisX插件 -->
+        <!-- MyBatis-plus插件 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -86,6 +84,60 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.8</version>
+        </dependency>
+
+        <!-- Log4j Core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.1</version>
+        </dependency>
+
+        <!-- Log4j API -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.14.1</version>
+        </dependency>
+
+        <!--redis 依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <!--hutool 工具包-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.16</version>
+        </dependency>
+
+        <!--Base64编码 依赖库-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
+
+        <!--我的 myRedisson-spring-boot-starter -->
+        <dependency>
+            <groupId>com.jiaru</groupId>
+            <artifactId>myRedisson-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jiaru</groupId>
+            <artifactId>threadpool-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -109,6 +161,7 @@
         </dependencies>
     </dependencyManagement>
 
+
     <build>
         <plugins>
             <plugin>
@@ -121,6 +174,8 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
+
 
 </project>

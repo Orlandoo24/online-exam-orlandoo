@@ -1,5 +1,0 @@
-com\exam\vo\AnswerVO.class
-com\exam\util\ApiResultHandler.class
-com\exam\entity\ApiResult.class
-com\exam\vo\Item.class
-com\exam\config\MybatisPlusConfig.class

@@ -22,4 +22,12 @@ public class AnswerServiceImpl implements AnswerService {
     public IPage<AnswerVO> findAll(Page<AnswerVO> page) {
         return answerMapper.findAll(page);
     }
+
+
+    @Override
+    public IPage<AnswerVO> findAllQuestion(Integer page, Integer size) {
+        Page<AnswerVO> answerVOPage = new Page<>(page, size);
+        IPage<AnswerVO> allQuestion = answerMapper.findAll(answerVOPage);
+        return allQuestion;
+    }
 }

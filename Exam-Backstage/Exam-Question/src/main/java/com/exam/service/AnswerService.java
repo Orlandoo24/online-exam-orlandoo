@@ -3,6 +3,7 @@ package com.exam.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.vo.AnswerVO;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @author PlutoWu
@@ -11,4 +12,7 @@ import com.exam.vo.AnswerVO;
 public interface AnswerService {
 
     IPage<AnswerVO> findAll(Page<AnswerVO> page);
+
+    IPage<AnswerVO> findAllQuestion(Integer page, Integer size);
+
 }

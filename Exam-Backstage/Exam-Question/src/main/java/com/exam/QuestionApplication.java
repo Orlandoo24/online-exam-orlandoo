@@ -5,7 +5,6 @@ import org.apache.ibatis.logging.stdout.StdOutImpl;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -16,6 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class QuestionApplication {
 
     public static void main(String[] args) {
+        //打印SQL
         LogFactory.useCustomLogging(StdOutImpl.class);
         SpringApplication.run(QuestionApplication.class, args);
     }

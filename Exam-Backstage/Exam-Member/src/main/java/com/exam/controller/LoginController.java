@@ -20,20 +20,22 @@ public class LoginController {
 
         Integer username = login.getUsername();
         String password = login.getPassword();
+
         Admin adminRes = loginService.adminLogin(username, password);
         if (adminRes != null) {
-//            return ApiResultHandler.buildApiResult(200, "请求成功", adminRes);
-        return ApiResultHandler.success(adminRes);
+            return ApiResultHandler.buildApiResult(200, "请求成功", adminRes);
         }
+
         Teacher teacherRes = loginService.teacherLogin(username, password);
         if (teacherRes != null) {
             return ApiResultHandler.buildApiResult(200, "请求成功", teacherRes);
         }
-        Student studentRes = loginService.studentLogin(username, password);
+
+        Student studentRes = loginService.studentLogin(login);
         if (studentRes != null) {
             return ApiResultHandler.buildApiResult(200, "请求成功", studentRes);
         }
-        return ApiResultHandler.buildApiResult(400, "请求失败", null);
 
+        return ApiResultHandler.buildApiResult(400, "请求失败", null);
     }
 }

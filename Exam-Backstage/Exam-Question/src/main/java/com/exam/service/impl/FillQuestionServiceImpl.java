@@ -8,6 +8,7 @@ import com.exam.service.FillQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +23,14 @@ public class FillQuestionServiceImpl implements FillQuestionService {
 
     @Override
     public List<FillQuestion> findByIdAndType(Integer paperId) {
-        return fillQuestionMapper.findByIdAndType(paperId);
+        ArrayList<FillQuestion> res = new ArrayList<>();
+        //先从缓存中获取
+
+
+
+        List<FillQuestion> fQList = fillQuestionMapper.findByIdAndType(paperId);
+
+        return res;
     }
 
     @Override

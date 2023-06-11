@@ -17,12 +17,14 @@ public interface StudentMapper extends BaseMapper<Student> {
 
     /**
      * 分页查询所有学生
-     *
      * @param page
      * @return List<Student>
      */
     @Select("select * from student")
     IPage<Student> findAll(Page page);
+
+    @Select("SELECT studentId FROM student ORDER BY studentId LIMIT #{startIndex}, #{pageSize}")
+    List<Integer> getStudentIdList(@Param("startIndex") int startIndex, @Param("pageSize") int pageSize);
 
     @Select("select * from student where studentId = #{studentId}")
     Student findById(Integer studentId);

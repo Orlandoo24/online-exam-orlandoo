@@ -35,11 +35,11 @@ public interface ExamManageService {
 
     ExamManage findById(Integer examCode);
 
-    int delete(Integer examCode);
+    Boolean delete(Integer examCode);
 
-    int update(ExamManage exammanage);
+    Boolean update(ExamManage examManage);
 
-    int add(ExamManage exammanage);
+    int add(ExamManage examManage);
 
     ExamManage findOnlyPaperId();
 

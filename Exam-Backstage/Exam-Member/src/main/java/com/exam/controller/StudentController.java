@@ -21,8 +21,7 @@ public class StudentController {
 
     @GetMapping("/students/{page}/{size}")
     public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size) {
-        Page<Student> studentPage = new Page<>(page, size);
-        IPage<Student> res = studentService.findAll(studentPage);
+        IPage<Student> res = studentService.findAll(page, size);
         return ApiResultHandler.success(res);
     }
 

@@ -28,6 +28,11 @@ public class ReplayServiceImpl implements ReplayService {
         return replayMapper.findAllById(messageId);
     }
 
+    /**
+     * 通过 id 查询回复
+     * @param replayId
+     * @return
+     */
     @Override
     public Replay findById(Integer replayId) {
         return replayMapper.findById(replayId);

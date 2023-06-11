@@ -1,10 +1,15 @@
 package com.exam.entity;
 
+import lombok.Data;
+
+import java.io.Serializable;
+
 /**
  * @author PlutoWu
  * @date 2021/05/24
  */
-public class Student {
+@Data
+public class Student implements Serializable {
     private Integer studentId;
 
     private String studentName;

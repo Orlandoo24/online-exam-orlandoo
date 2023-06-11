@@ -30,10 +30,10 @@ public class ExamManageController {
     @Autowired
     private ExamManageMapper examManageMapper;
 
-    //不分页获取所有考试和练习信息
+    //不分页获取所有考试和练习信息（教师端查询）
     @GetMapping("/all/{page}/{size}")
     public ApiResult findAll(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
-        System.out.println("分页查询所有试卷");
+        System.out.println("分页查询所有试卷和练习");
         ApiResult apiResult;
         Page<ExamManage> examManage = new Page<>(page, size);
         IPage<ExamManage> all = examManageService.findAll(examManage);
@@ -50,7 +50,7 @@ public class ExamManageController {
         return apiResult;
     }
 
-    //获取当前所有考试分页信息
+    //分页获取当前所有考试信息
     @GetMapping("/exams/{page}/{size}")
     public ApiResult findAllExam(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
         System.out.println("分页查询所有试卷");
@@ -70,7 +70,7 @@ public class ExamManageController {
         return apiResult;
     }
 
-    //获取当前所有练习分页信息
+    //分页获取当前所有练习信息
     @GetMapping("/practices/{page}/{size}")
     public ApiResult findAllPractices(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
         System.out.println("分页查询所有练习");
@@ -80,8 +80,6 @@ public class ExamManageController {
         apiResult = ApiResultHandler.buildApiResult(200, "请求成功！", all);
         return apiResult;
     }
-
-
 
     @GetMapping("/exam/{examCode}")
     public ApiResult findById(@PathVariable("examCode") Integer examCode) {
@@ -95,17 +93,18 @@ public class ExamManageController {
 
     @DeleteMapping("/exam/{examCode}")
     public ApiResult deleteById(@PathVariable("examCode") Integer examCode) {
+
         //将试卷进行删除
         ExamManage examManage = examManageMapper.findById(examCode);
         String examName = examManage.getSource();
         Integer paperId = examManage.getPaperId();
         int delPaperRes = paperMapper.delete(paperId);
-        log.info("将试卷{}删除", examName);
+        log.info("将试卷{}删除", delPaperRes);
 
         //将考试进行删除
-        int delExamRes = examManageService.delete(examCode);
-        log.info("删除{}场考试", delExamRes);
-        if (delExamRes == 1){
+        Boolean delExamRes = examManageService.delete(examCode);
+        log.info("删除{}场考试", 1);
+        if (delExamRes == true){
             return ApiResultHandler.buildApiResult(200, "考试删除成功", delExamRes);
         } else {
           return  ApiResultHandler.buildApiResult(10000, "考试删除失败", delExamRes);
@@ -114,10 +113,10 @@ public class ExamManageController {
 
     @PutMapping("/exam")
     public ApiResult update(@RequestBody ExamManage exammanage) {
-        int res;
+        Boolean res;
         try {
             res = examManageService.update(exammanage);
-            log.info("受影响行数：{}", res);
+            log.info("编辑更新成功：{}", res);
         } catch (Exception e) {
             log.info("编辑更新异常：{}", e);
             return ApiResultHandler.buildApiResult(20000,"请求参数错误", e);
